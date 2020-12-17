@@ -1,15 +1,15 @@
 <mat-card style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title style="margin:30px;">Login</mat-card-title>
     <mat-card-content>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
             <p>
-                <mat-form-field>
+                <mat-form-field style="width:350px;">
                     <input type="text" matInput placeholder="Username" formControlName="username">
                 </mat-form-field>
             </p>
 
             <p>
-                <mat-form-field>
+                <mat-form-field style="width:350px;">
                     <input type="password" matInput placeholder="Password" formControlName="password">
                 </mat-form-field>
             </p>

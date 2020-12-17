@@ -1,0 +1,6 @@
+<form action="" (submit)="onFormSubmit($event)">
+    <mat-form-field appearance="outline" style="width:50%;">
+        <mat-label>Unesite termin za pretragu</mat-label>
+        <input matInput type="text" (input)="term = $event.target.value" />
+    </mat-form-field>
+</form>

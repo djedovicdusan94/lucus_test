@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   login(formData: any) {
     if (formData['username'] === 'test' || formData['password'] === 'test') {
@@ -18,5 +19,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/identity']);
   }
 }

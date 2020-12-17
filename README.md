@@ -17,3 +17,7 @@ db.json
 # 3. Run client app
 npm start or ng serve
 
+# 4. Username/Password
+
+Username: test
+Password: test

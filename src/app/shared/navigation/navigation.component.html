@@ -17,9 +17,13 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <p class="hamburger"><a href="javascript:;" (click)="sidenav.open()">
+        <p class="navigation">
+            <a href="javascript:;" (click)="sidenav.open()">
                 <mat-icon class="logo">menu</mat-icon>
-            </a></p>
+            </a>
+            <button style="float:right" mat-raised-button color="primary" (click)="onLogout()">Logout</button>
+        </p>
+
         <ng-content></ng-content>
     </mat-sidenav-content>
 </mat-sidenav-container>

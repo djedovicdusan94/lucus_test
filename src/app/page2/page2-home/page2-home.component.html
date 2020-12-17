@@ -1,3 +1,12 @@
 <app-navigation>
-    Page2
+
+    <div style="text-align: center;">
+        <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+    </div>
+    
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;flex-direction:row;align-items:center;justify-content:center;">
+        <li *ngFor="let image of images; let i=index">
+            <img [src]="image.thumb" (click)="open(i)" style="width:100%;height:100%;vertical-align:middle;padding:5px;" />
+        </li>
+    </ul>
 </app-navigation>
