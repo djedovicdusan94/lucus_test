@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container" (backdropClick)="close('backdrop')">
+    <mat-sidenav class="sidenav" #sidenav (keydown.escape)="close('escape')" disableClose>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/page1">
+                <span class="nav-option">Page1</span>
+            </a>
+            <a mat-list-item routerLink="/page2">
+                <span class="nav-option">Page2</span>
+            </a>
+            <a mat-list-item routerLink="/page3">
+                <span class="nav-option">Page3</span>
+            </a>
+            <a mat-list-item routerLink="/page4">
+                <span class="nav-option">Page4</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p class="hamburger"><a href="javascript:;" (click)="sidenav.open()">
+                <mat-icon class="logo">menu</mat-icon>
+            </a></p>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

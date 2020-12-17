@@ -1,0 +1,60 @@
+<app-navigation>
+    <div class="mat-elevation-z8" style="margin:30px;">
+
+        <div style="float:left;padding:10px 0 10px 20px;">
+            <mat-form-field>
+                <input matInput type="number" pattern="[0-9]*" (keyup)="applyFilter($event.target.value)" placeholder="Filter by User ID">
+            </mat-form-field>
+        </div>
+
+        <div style="float:right;padding:20px 20px 10px 0;">
+            <button mat-raised-button color="primary" (click)="openAddDialog()">Add new row</button>
+        </div>
+
+        <table #table style="margin:0 auto; width: 100%; height: 100%;" mat-table matSort [dataSource]="dataSource"
+            class="mat-elevation-z8">
+
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header="title"> Title </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="body">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header="body"> Body </th>
+                <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header="userId"> User ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                    <div style="display: inline-flex;">
+                        <button mat-icon-button color="primary" (click)="openEditDialog(element)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" (click)="deleteRow(element.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <div *ngIf="showPage1LoadingSpinner"
+        style="position:absolute;top:0;left:0;box-shadow:none;background: rgba(177, 177, 177, 0.473);width:100%;height: 100%;">
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);">
+            <mat-progress-spinner mode="indeterminate">
+            </mat-progress-spinner>
+        </div>
+    </div>
+
+</app-navigation>

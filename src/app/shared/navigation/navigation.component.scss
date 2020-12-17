@@ -1,0 +1,16 @@
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  & .sidenav {
+      width: 300px;
+  }
+}
+
+.hamburger {
+  margin-top: 20px;
+  margin-left: 20px;
+}

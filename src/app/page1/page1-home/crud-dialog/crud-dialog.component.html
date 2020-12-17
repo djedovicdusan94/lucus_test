@@ -1,0 +1,28 @@
+<h1 mat-dialog-title style="text-align:center;">EDIT</h1>
+<div mat-dialog-content style="display:flex;justify-content:center;align-items:center;flex-direction: column;">
+    <form #page1Form="ngForm">
+        <mat-form-field appearance="outline" style="width:350px;">
+            <mat-label>User Id</mat-label>
+            <input matInput name="userId" type="number" pattern="[0-9]*" [(ngModel)]="data.userId" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="width:350px;">
+            <mat-label>Id</mat-label>
+            <input disabled matInput name="id" type="number" pattern="[0-9]*" [(ngModel)]="data.id">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="width:350px;">
+            <mat-label>Body</mat-label>
+            <textarea matInput rows="6" name="body" placeholder="text" [(ngModel)]="data.body" required></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" style="width:350px;">
+            <mat-label>Title</mat-label>
+            <textarea matInput rows="2" name="title" placeholder="text" [(ngModel)]="data.title" required></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions style="justify-content:center;">
+    <button mat-raised-button color="primary" [disabled]="page1Form.invalid" [mat-dialog-close]="data"
+        cdkFocusInitial>Ok</button>
+</div>
